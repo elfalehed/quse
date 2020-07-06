@@ -10,8 +10,8 @@ from cryptography.fernet import Fernet
 from os import stat, remove 
 bufferSize = 64 * 1024 
 password = "kmx404isthebest"
-pyAesCrypt.encryptFile("data.txt", "data.txt.aes", password, bufferSize) 
-pyAesCrypt.decryptFile("data.txt", "data.txt.aes", password, bufferSize) 
+#pyAesCrypt.encryptFile("data.txt", "data.txt.aes", password, bufferSize) 
+#pyAesCrypt.decryptFile("data.txt", "data.txt.aes", password, bufferSize) 
 
 # hash related
 from Crypto.Hash import SHA256
@@ -46,12 +46,21 @@ def st_dsp():
  
 def aes_q() :
     an = input("You want to decrypt, encrypt with AES?\n") 
-   
+    print("A- Encrypt") 
+    print("B- Decrypt") 
 # AES decrypting 
 class AES: 
+    """
     def __init__(self): 
         pass 
-    
+    """
+    def generateKey(self): 
+        key = ''.join(chr(random.randint(0,100)) for i in range(16))
+        fd = open("AES_key.pem", "wb") 
+        fd.write(bytes(str(key), 'utf-8'))
+        fd.close()
+        return bytes(str(key), 'utf-8') 
+
     # AES encrypt 
     def eAES(): 
         obj = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV256')
@@ -60,6 +69,8 @@ class AES:
         with open(str(path), "rb") as fIn: 
             with open(str(path)+".aes", "wb") as fOut: 
                 pyAesCrypt.encryptStream(fIn, fOut, password, bufferSize) 
+    
+    
     # AES decrypt
     def dAES(): 
         with open(str(path)+".aes", "rb") as fIn: 
@@ -73,7 +84,7 @@ class AES:
 def prompt_sudo():
     ret = 0
     if os.geteuid() != 0:
-        msg = "[sudo] password for %u:"
+        msg = "[sudo] password for %u to continue:"
         ret = subprocess.check_call("sudo -v -p '%s'" % msg, shell=True)
     return ret
 
