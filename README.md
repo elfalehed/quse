@@ -2,8 +2,9 @@
 Quse is a encrypting && decrypting tool. Developed by @KMx404. <br /> <br />
 
 ## How to use?: <br />
-1- First, install Python library ```pyAesCrypt```: <br />
+1- First, install Python library <b>pyAesCrypt</b>: <br />
 `pip3 install pyAesCrypt` <br />
+
 2- Run using ```python3 Quse.py```
 <br />
 <br /> 
