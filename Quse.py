@@ -81,6 +81,8 @@ class AES:
 
     # AES decrypt
     def dAES(): 
+       # These deep features are gonna be contained in the next version! Since I'm aiming for the basics right now!
+    
         """
         with open(str(path)+".aes", "rb") as fIn: 
             try: 
@@ -100,22 +102,25 @@ def prompt_sudo():
     return ret
 
 if __name__=='__main__':
-    print(banner)
-    prompt_sudo() 
-    if prompt_sudo() != 0: 
-        print("You need SUDO for this!")
-        exit() 
-    st_dsp() 
-    answer = input("$  ") 
-    if int(answer) == 1: 
-        aes_q()
-        so = input("$  ") 
-        if so == 'A': 
-            AES.eAES() 
-            print("Your file has been encrypted!") 
-        else: 
-            AES.dAES() 
-            print("Your file has been decrypted!") 
-    elif int(answer) == 2: 
+    try:
+        print(banner)
+        if prompt_sudo() != 0: 
+            print("You need SUDO for this!")
+            exit() 
+        st_dsp() 
+        answer = input("$  ") 
+        if int(answer) == 1: 
+            aes_q()
+            so = input("$  ") 
+            if so == 'A': 
+               AES.eAES() 
+               print("Your file has been encrypted!") 
+               os.subprocess('rm -rf',str(path)) 
+            else: 
+               AES.dAES() 
+               print("Your file has been decrypted!") 
+        elif int(answer) == 2: 
         # This one to be edited.  
-        pass
+            pass
+    except: 
+        print("Theres an Error! Check the path && Unvalid inputs!") 
