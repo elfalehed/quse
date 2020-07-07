@@ -115,8 +115,11 @@ if __name__=='__main__':
             if so == 'A': 
                AES.eAES() 
                print("Your file has been encrypted!") 
-               os.subprocess('rm -rf',str(path)) 
-            else: 
+               p = input("Where do you want to save your file?") 
+               os.system('mv dataout.txt.aes' + ' ' + str(p))  
+               os.system('rm -rf' + str(path)) 
+                 
+           else: 
                AES.dAES() 
                print("Your file has been decrypted!") 
         elif int(answer) == 2: 
