@@ -45,41 +45,52 @@ def st_dsp():
     print("3- TripleDES")
  
 def aes_q() :
-    an = input("You want to decrypt, encrypt with AES?\n") 
+    print("You want to encrypt, decrypt with AES?") 
     print("A- Encrypt") 
     print("B- Decrypt") 
 # AES decrypting 
 class AES: 
+    bufferSize = 64 * 1024 
+    # change the password
+    password = "kmx404isthebest" 
+
     """
     def __init__(self): 
         pass 
-    """
     def generateKey(self): 
         key = ''.join(chr(random.randint(0,100)) for i in range(16))
         fd = open("AES_key.pem", "wb") 
         fd.write(bytes(str(key), 'utf-8'))
         fd.close()
         return bytes(str(key), 'utf-8') 
-
+        """
     # AES encrypt 
     def eAES(): 
+        # its needs an update though, ths imported modules gotta be updated
+        """
         obj = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV256')
         path = input("type the file path: ") 
         dfile = obj.encrypt(path) 
         with open(str(path), "rb") as fIn: 
             with open(str(path)+".aes", "wb") as fOut: 
                 pyAesCrypt.encryptStream(fIn, fOut, password, bufferSize) 
-    
-    
+        """
+        path = input("Path of the File you want to encrypt: ") 
+        pyAesCrypt.encryptFile(str(path), "dataout.txt.aes", password, bufferSize) 
+
+
     # AES decrypt
     def dAES(): 
+        """
         with open(str(path)+".aes", "rb") as fIn: 
             try: 
                 with open ("dataout.txt", "wb")  as fOut: 
                     pyAesCrypt.decryptStream(fIn, fOut, password, buffersize, encFileSize) 
             except ValueError: 
                 remove("dataout.txt") 
-
+        """
+        poth = input("path of the encrypted File: ") 
+        pyAesCrypt.decryptFile(str(poth), "dataout.txt", password, bufferSize) 
 # root check 
 def prompt_sudo():
     ret = 0
@@ -98,10 +109,13 @@ if __name__=='__main__':
     answer = input("$  ") 
     if int(answer) == 1: 
         aes_q()
-        if int(aes_a) == 1: 
+        so = input("$  ") 
+        if so == 'A': 
             AES.eAES() 
+            print("Your file has been encrypted!") 
         else: 
             AES.dAES() 
+            print("Your file has been decrypted!") 
     elif int(answer) == 2: 
         # This one to be edited.  
         pass
