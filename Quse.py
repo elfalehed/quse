@@ -17,6 +17,7 @@ password = "kmx404isthebest"
 from Crypto.Hash import SHA256
 from Crypto.Cipher import AES
 
+# in order to make this tool dynamic there's a commented parts made to be a place of evolving.
 # banner
 banner = """
      QQQQQQQQQ                                                            
@@ -82,7 +83,6 @@ class AES:
     # AES decrypt
     def dAES(): 
        # These deep features are gonna be contained in the next version! Since I'm aiming for the basics right now!
-    
         """
         with open(str(path)+".aes", "rb") as fIn: 
             try: 
@@ -118,7 +118,6 @@ if __name__=='__main__':
                p = input("Where do you want to save your file?") 
                os.system('mv dataout.txt.aes' + ' ' + str(p))  
                os.system('rm -rf' + str(path)) 
-                 
            else: 
                AES.dAES() 
                print("Your file has been decrypted!") 
