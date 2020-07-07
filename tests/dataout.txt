@@ -1,0 +1,20 @@
+# check the available wireless connections:
+nmcli d wifi list ifname wlan0
+
+# Connect :
+nmcli d wifi connect "TP-LINK_5C1910" password 97212701  ifname wlan0
+
+# Check the IP address of a website 
+ping --website.url
+
+# Information about a website
+nslookup --ip.address
+
+
+# information gathering 
+~Tools : 
+	*Maltego
+	*Recon-ng
+	*nmap
+
+

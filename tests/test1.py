@@ -1,8 +1,5 @@
 #! /usr/bin/env python3 
-
-
-
-
+"""
 import pyAesCrypt
 from os import stat, remove
 # encryption/decryption buffer size - 64K
@@ -25,3 +22,17 @@ with open("data.txt.aes", "rb") as fIn:
             pyAesCrypt.decryptStream(fIn, fOut, password, bufferSize, encFileSize)
     except ValueError:
         remove("dataout.txt") 
+        """
+
+import pyAesCrypt
+# encryption/decryption buffer size - 64K
+bufferSize = 64 * 1024
+password = "foopassword"
+path = input("enter a path: ") 
+# encrypt
+#pyAesCrypt.encryptFile(str(path), "data.txt.aes", password, bufferSize)
+# decrypt
+pyAesCrypt.decryptFile("data.txt.aes", "dataout.txt", password, bufferSize)
+
+
+
