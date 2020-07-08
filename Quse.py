@@ -38,7 +38,10 @@ Q:::::::QQ::::::::Qu:::::::::::::::uus:::::ssss::::::se::::::::e
      QQQQQQQQ::::QQ    uuuuuuuu  uuuu  sssssssssss        eeeeeeeeeeeeee  
              Q:::::Q                                                      
               QQQQQQ                                                      
-                                                                     BY: @KMx404"""
+                                                                     BY: @KMx404
+// Behold, Some of this tool's option is made to edit your files.
+// So make sure you have full access and know what to do.  """
+
 def st_dsp():
     print("Choose the type of Encryption You want to Use!:") 
     print("1- AES") 
