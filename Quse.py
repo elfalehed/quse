@@ -78,9 +78,12 @@ class AES:
         with open(str(path), "rb") as fIn: 
             with open(str(path)+".aes", "wb") as fOut: 
                 pyAesCrypt.encryptStream(fIn, fOut, password, bufferSize) 
-        """
+
+       """
         path = input("Path of the File you want to encrypt: ") 
         pyAesCrypt.encryptFile(str(path), "dataout.txt.aes", password, bufferSize) 
+ 
+
 
 
     # AES decrypt
