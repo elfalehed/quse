@@ -23,7 +23,11 @@ Quse is a encrypting && decrypting tool. Developed by @KMx404. <br /> <br />
 
 2- Next, install the Python library ```pbkdf2``` that implements the PBKDF password-to-key derication algorithm: <br />
 			```pip install pbkdf2``` <br />		
-
+<br /> <br / >
+## 2DO's 
+* Re:clean the code 
+* Start on the next Version
+* Test new algorithms 
 
 
 
