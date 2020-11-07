@@ -1,5 +1,5 @@
 # :warning: Quse <br />
-Quse is a encrypting && decrypting tool. Developed by @KMx404. <br /> <br />
+Quse is an encrypting & decrypting tool. Developed by <i>KMx404</i>. <br /> <br />
 
 ## How to use?: <br />
 1- First, install Python library <b>pyAesCrypt</b>: <br />
@@ -19,11 +19,12 @@ Quse is a encrypting && decrypting tool. Developed by @KMx404. <br /> <br />
 ## For future features! <br /> 
 #### :pushpin: Added modules! <br />
 1- First, install Python library ```pyaes``` that implements the AES symetric key encryption algorithm: <br />
-			```pip install pyaes``` <br /> <br />
+			```pip install pyaes``` <br /> 
 
 2- Next, install the Python library ```pbkdf2``` that implements the PBKDF password-to-key derication algorithm: <br />
 			```pip install pbkdf2``` <br />		
-<br /> <br / >
+<br /> 
+
 ## 2DO's 
 * Re:clean the code 
 * Start on the next Version
